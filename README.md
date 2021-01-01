@@ -49,6 +49,8 @@ part 1. input 다루기 2 : 블로그 글 발행
     - <div style = {{ color : 'blue', fontSize : '30px' }}>글씨</div>
       -> {속성명 : '속성값} 대쉬(-) 불가능, 붙여쓰고 앞글자를 대문자로 치환
 
+</details>
+
 <details>
 <summary>1-4</summary>
 <br>
@@ -63,3 +65,5 @@ part 1. input 다루기 2 : 블로그 글 발행
       -> a : 실제 저장할 데이터, b : 저장할 데이터를 변결시킬 함수
       -> 데이터바인딩 가능 <h3>{a}</h3> => <h3>ㅇㅇㅇㅇ<h3>
       -> Array, Object 가능 let [a, b] = useState(['ㅇㅇ', 'ㄴㄴ']);
+
+</details>
