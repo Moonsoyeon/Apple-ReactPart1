@@ -2,7 +2,8 @@
 
 ## React 리액트 기초부터 쇼핑몰 프로젝트까지!
 -----
-배울 내용
+<details>
+<summary>배울 내용</summary>
 
     – class 문법없이 개발하는 2020스타일 easy-mode 리액트
 
@@ -27,10 +28,11 @@
     – 스마트폰에 설치가능한 Progressive Web App으로 리액트사이트 발행하기
 
     – (포트폴리오 자랑용) github pages를 이용해 사이트 발행
-    
+
+</details>
 -----
 
-### First Commit
+## First Commit
 
 part 1. input 다루기 2 : 블로그 글 발행
 
@@ -39,7 +41,7 @@ part 1. input 다루기 2 : 블로그 글 발행
 <details>
 <summary>1-3</summary>
 
-1-3 JSX를 이용해 HTML 페이지 제작해보는건 처음이겠죠
+JSX를 이용해 HTML 페이지 제작해보는건 처음이겠죠
 
     - 리액트에서 class=""를 넣고 싶다면 className=""
 
@@ -49,13 +51,11 @@ part 1. input 다루기 2 : 블로그 글 발행
       -> {속성명 : '속성값} 대쉬(-) 불가능, 붙여쓰고 앞글자를 대문자로 치환
 
 </details>
-<br>
 
 <details>
 <summary>1-4</summary>
-<br>
 
-1-4 중요한 데이터는 변수말고 리액트 state로 만들랬죠
+중요한 데이터는 변수말고 리액트 state로 만들랬죠
 
     - state를 쓰는 이유
       -> 변수가 변경될 때 자동으로 관련된 HTML을 재렌더링되게 만들고 싶어서
