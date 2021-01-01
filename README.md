@@ -38,7 +38,6 @@ part 1. input 다루기 2 : 블로그 글 발행
 
 <details>
 <summary>1-3</summary>
-<br>
 
 1-3 JSX를 이용해 HTML 페이지 제작해보는건 처음이겠죠
 
@@ -50,6 +49,7 @@ part 1. input 다루기 2 : 블로그 글 발행
       -> {속성명 : '속성값} 대쉬(-) 불가능, 붙여쓰고 앞글자를 대문자로 치환
 
 </details>
+<br>
 
 <details>
 <summary>1-4</summary>
