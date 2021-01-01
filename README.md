@@ -75,3 +75,21 @@ JSX를 이용해 HTML 페이지 제작해보는 건 처음이겠죠
       -> ex) <span>👍</span> 을 눌렀을 때 따봉이라는 state를 1 증가하려면 어떻게 해야할까요?
              <span onClick = { { () => { 따봉변경(따봉 + 1) } } }>
 </details>
+
+<details>
+<summary>1-6</summary>
+숙제 해설 : 블로그 글 수정버튼 만들기
+
+    - 원래 자바스크립트 내에서 array나 object 자료형은 = 등호로 복사하면 각각 별개의 자료형이 생성되는게 아니라 값을 공유함
+      -> ex) var data1 = [1, 2, 3]; var data2 = data1;
+         => data1과 data2는 각각 [1, 2, 3]을 별개로 저장하는 게 아닌 똑같은 값을 공유함
+         => data1을 변경하면 data2도 자동으로 변경됨
+      -> state도 = 등호를 이용해서 복사하면 문제가 일어나기 때문에 완전히 개별 복사본을 만들어주는 카피를 해야 함
+         => ex) var 새로운array = [...원본array]
+         => function 제목바꾸기() {
+                var newArray = [...글제목];
+                newArray[0] = '여자코트 추천';
+                글제목변경( newArray );
+            } 
+    - 
+</details>
