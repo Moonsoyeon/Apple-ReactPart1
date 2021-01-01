@@ -5,7 +5,7 @@
 배울 내용
 
     – class 문법없이 개발하는 2020스타일 easy-mode 리액트
-    
+
     – 컴포넌트, Props, State를 이용한 웹앱 개발
 
     – 리액트로 HTML 모듈화해서 개발하는 법
@@ -35,6 +35,10 @@
 part 1. input 다루기 2 : 블로그 글 발행
 
 -----
+
+<details>
+<summary>리스트</summary>   
+<br>
 
 1-3 JSX를 이용해 HTML 페이지 제작해보는건 처음이겠죠
 
