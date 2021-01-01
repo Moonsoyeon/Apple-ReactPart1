@@ -36,9 +36,7 @@ part 1. input 다루기 2 : 블로그 글 발행
 
 -----
 
-<details>
 <summary>리스트</summary>   
-<br>
 
 1-3 JSX를 이용해 HTML 페이지 제작해보는건 처음이겠죠
 
