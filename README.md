@@ -1,7 +1,6 @@
 [CodingApple](https://online.codingapple.com/course/react-basic/)
 
 ## React 리액트 기초부터 쇼핑몰 프로젝트까지!
------
 <details>
 <summary>배울 내용</summary>
 
@@ -30,8 +29,8 @@
     – (포트폴리오 자랑용) github pages를 이용해 사이트 발행
 
 </details>
------
 
+-----
 ## First Commit
 
 part 1. input 다루기 2 : 블로그 글 발행
