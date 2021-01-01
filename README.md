@@ -31,11 +31,6 @@
 </details>
 
 -----
-## First Commit
-
-part 1. input 다루기 2 : 블로그 글 발행
-
------
 
 <details>
 <summary>1-3</summary>
