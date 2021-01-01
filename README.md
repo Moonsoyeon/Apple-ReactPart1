@@ -152,3 +152,18 @@ React Component : 많은 div들을 한 단어로 줄이고 싶은 충동이 들 
          그냥 바로 쓸 수 없음
          => props라는 문법을 이용해 state를 <Modal>까지 전해줘야 사용 가능
 </details>
+
+<details>
+<summary>1-8</summary>
+클릭하면 동작하는 UI (모달창) 만드는 법
+
+    - 리액트는 중괄호 내에서 if문을 사용할 수 없어서 삼항연산자를 사용해야 함
+      -> 조건식 ? 조건식 참일 때 실행할 코드 : 조건식 거짓일 때 실행할 코드 
+</details>
+
+<details>
+<summary>1-9</summary>
+map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때
+
+    - 
+</details>
