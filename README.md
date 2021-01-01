@@ -91,5 +91,64 @@ JSX를 이용해 HTML 페이지 제작해보는 건 처음이겠죠
                 newArray[0] = '여자코트 추천';
                 글제목변경( newArray );
             } 
-    - 
+</details>
+
+<details>
+<summary>1-7</summary>
+React Component : 많은 div들을 한 단어로 줄이고 싶은 충동이 들 때
+
+    - return () 안에 HTML을 넣을 때 태그 2개를 평행하게 넣을 수 없음
+      -> 굳이 쓰고 싶다면
+         <div>
+            <div></div>
+            <div></div> 
+         </div>
+
+    - Component : 리액트에서 제공하는 긴 HTML을 한 단어로 깔끔하게 치환해서 넣을 수 있는 문법
+      -> 함수 만들 듯, 변수 만들 듯 한 단어로 치환해서 원하는 곳에 꽂아넣을 수 있음
+    
+    - 방법
+      1. function을 이용해서 함수를 하나 만들기
+      2. 그 함수 안에 return() 안에 원하는 HTML을 담기
+      3. 원하는 곳에서 <Modal></Modal> 이라고 사용했을 때 축약한 HTML이 등장
+      -> 축약한 HTML 덩어리를 Component 라고 칭함
+      -> ex)
+         function App (){
+            return (
+                <div>
+                    HTML 잔뜩있는 곳
+                    ...
+                    <Modal></Modal>
+                </div>
+            )
+         }
+
+         function Modal(){
+             return (
+                 <div className="modal">
+                    <h2>제목</h2>
+                    <p>날짜</p>
+                    <p>상세내용</p>
+                 </div>
+            )
+         }
+        
+    - Component의 특징
+      -> Component 이름 지을 땐 보통 영어 대문자로 시작
+      -> return() 안에 태그들이 평행하게 여러 개 들어갈 수 없음 ex) <div>, <></>
+      -> Component 위치는 보통 funcion App(){} 와 나란히 만듦
+         -> 보통 컴포넌트 안에다가 컴포넌트를 만들진 않기 때문
+      -> Component 안에 미리 만들어둔 Component 집어넣기도 가능
+
+    - 어떤 HTML들을 Component 만드는게 좋을까
+      -> 사이트에 반복해서 출현하는 HTML 덩어리들
+      -> 내용이 자주 변경될 것 같은 HTML의 한 부분
+      -> 다른 페이지를 만들 때
+      -> 다른 팀원과 협업할 때 웹페이지를 컴포넌트 단위로 작업 분배
+
+    - Component 단점
+      -> HTML을 깔끔하게 쓰려고 함수 자체를 많이 만드는 것 자체로 관리가 힘듦
+      -> <Modal>이라는 컴포넌트가 App(){} 안에 있는 state를 사용하고 싶을 때,
+         그냥 바로 쓸 수 없음
+         => props라는 문법을 이용해 state를 <Modal>까지 전해줘야 사용 가능
 </details>
