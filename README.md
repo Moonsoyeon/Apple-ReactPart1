@@ -30,5 +30,7 @@
 -----
 
 ### First Commit
+
 part 1. input 다루기 2 : 블로그 글 발행
+
 -----
