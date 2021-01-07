@@ -43,6 +43,7 @@ JSX를 이용해 HTML 페이지 제작해보는 건 처음이겠죠
 
     - <div style = {{ color : 'blue', fontSize : '30px' }}>글씨</div>
       -> {속성명 : '속성값} 대쉬(-) 불가능, 붙여쓰고 앞글자를 대문자로 치환
+      
 </details>
 
 <details>
@@ -57,6 +58,7 @@ JSX를 이용해 HTML 페이지 제작해보는 건 처음이겠죠
       -> a : 실제 저장할 데이터, b : 저장할 데이터를 변결시킬 함수
       -> 데이터바인딩 가능 <h3>{a}</h3> => <h3>ㅇㅇㅇㅇ<h3>
       -> Array, Object 가능 let [a, b] = useState(['ㅇㅇ', 'ㄴㄴ']);
+
 </details>
 
 <details>
@@ -74,6 +76,7 @@ JSX를 이용해 HTML 페이지 제작해보는 건 처음이겠죠
       -> ㅇㅇ변경(대체할 데이터) 
       -> ex) <span>👍</span> 을 눌렀을 때 따봉이라는 state를 1 증가하려면 어떻게 해야할까요?
              <span onClick = { { () => { 따봉변경(따봉 + 1) } } }>
+
 </details>
 
 <details>
@@ -91,6 +94,7 @@ JSX를 이용해 HTML 페이지 제작해보는 건 처음이겠죠
                 newArray[0] = '여자코트 추천';
                 글제목변경( newArray );
             } 
+
 </details>
 
 <details>
@@ -151,6 +155,7 @@ React Component : 많은 div들을 한 단어로 줄이고 싶은 충동이 들 
       -> <Modal>이라는 컴포넌트가 App(){} 안에 있는 state를 사용하고 싶을 때,
          그냥 바로 쓸 수 없음
          => props라는 문법을 이용해 state를 <Modal>까지 전해줘야 사용 가능
+
 </details>
 
 <details>
@@ -159,6 +164,7 @@ React Component : 많은 div들을 한 단어로 줄이고 싶은 충동이 들 
 
     - 리액트는 중괄호 내에서 if문을 사용할 수 없어서 삼항연산자를 사용해야 함
       -> 조건식 ? 조건식 참일 때 실행할 코드 : 조건식 거짓일 때 실행할 코드 
+
 </details>
 
 <details>
@@ -244,5 +250,49 @@ map : 많은 div들을 반복문으로 줄이고 싶은 충동이 들 때
         </div>
       )
 
+</details>
+
+<details>
+<summary>1-10</summary>
+props : 자식이 부모의 state를 가져다쓰고 싶을 땐 말하고 쓰셔야합니다
+
+    - props를 사용하는 이유
+      -> 1-7에서 App이라는 컴포넌트 안에 <Modal> 이라는 컴포넌트를 만듦
+         App : 부모 컴포넌트 Modal : 자식 컴포넌트
+         자식 컴포넌트가 부모 컴포넌트 안에 있던 state를 가져다 쓰고 싶을 때!
+         props라는 문법으로 state를 전송한 뒤에 {props.state이름} 
+
+    - 방법
+      1. <자식컴포넌트 전송할 이름 = { state명 }> 이렇게 사용한 후
+      2. 자식컴포넌트 선언하는 function 안에 파라미터를 하나 만들어주기
+      
+      ex) 글제목이라는 부모 컴포넌트의 state를 자식 컴포넌트에 전송해보기
+      funtion App() {
+          let [글제목, 글제목변경] = useState(['aa', 'bb', 'cc']);
+          return(
+              <div>
+                ...
+                <Modal 글제목 = {글제목}></Modal>
+              </div>
+          )
+      }
+      function Modal(props){
+          return(
+              <div className="modal">
+                <h2>제목 { props.글제목[0] }</h2>
+                <p>날짜</p>
+                <p>상세내용</p>
+              </div>
+          )
+      }
+      -> 1. <Mdoal 전송할이름 = {state명}> 이렇게 원하는 state를 적어주면 전송됨
+         2. function Modal(props){} 이렇게 쓰면 전송된 props 사용 가능
+         
+         => 무한대 전송 가능
+         => props라는 파라미터에는 전송한 모든 props 데이터가 들어가있음
+            props.글제목 이런 식으로 원하는 것만 꺼내서 쓰면 됨
+         => props 전송할 때 꼭 {} 중괄호로 전송해야 하는 건 아님
+            <Modal 글제목 = {변수명}> 변수명을 넣고 싶으면 중괄호
+            <Modal 글제목 = "강남우동맛집"> 일반 텍스트를 전송하고 싶으면 따옴표
 
 </details>
