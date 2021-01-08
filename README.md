@@ -358,3 +358,38 @@ props : 자식이 부모의 state를 가져다쓰고 싶을 땐 말하고 쓰셔
       3. 필요하면 버튼을 누르거나 할 땐 state를 ~~이렇게 바꿔주세요~ 추가
 
 </details>
+
+<details>
+<summary>1-12</summary>
+input 다루기 1 : 사용자가 입력한 글을 변수에 저장하는 법
+
+    - 사용자가 input에 입력한 데이터는 중요한 데이터이기 때문에 state에 저장해서 쓰는 게 일반적
+      ex) let[입력값, 입력값변경] = useState('');
+
+    - 사용자가 input에 입력한 값 알아내는 법
+      ex)
+      let[입력값, 입력값변경] = useState('');
+
+      return(
+          <div>
+            ~~~HTML잔뜩~~~
+            <input onChange = { (e) => { console.log(e.target.value) } }/>
+          </div>
+      )
+      -> input에 onChange 이벤트핸들러를 달고 자바스크립트 문법을 쓰면 됨
+         onChange : input에 무언가를 입력할 때마다 특정 함수를 동작시킴
+         e.target : '지금 이벤트가 동작하는 HTML 요소', 자바스크립트 문법 (input 태그 등)
+         .value : 그 HTML(input 등)에 유저가 입력한 값
+
+    - input에 뭔가를 입력할 때마다 input에 입력된 값을 state에 저장하는 법
+      ex)
+      let[입력값, 입력값변경] = useState('');
+
+      return(
+          <div>
+            ~~~HTML잔뜩~~~
+            <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
+          </div>
+      )
+
+</details>
