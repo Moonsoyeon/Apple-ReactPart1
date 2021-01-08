@@ -393,3 +393,65 @@ input 다루기 1 : 사용자가 입력한 글을 변수에 저장하는 법
       )
 
 </details>
+
+<details>
+<summary>1-13</summary>
+input 다루기 2 : 블로그 글발행 기능 만들기
+
+    1. 글을 적을 수 잇는 UI가 하나 필요하고
+    2. 버튼을 눌렀을 때 글이 하나 추가되게 만들어야 함
+
+    - 1. 글적을 수 있는 UI부터 디자인해보자
+      ex)
+      <div>
+        HTML 잔뜩 있는 곳
+        <div className="publish">
+          <input />
+          <button>저장</button>
+        </div>
+      </div>
+      
+    - 2. 글 적고 저장 버튼을 누르면 게시물이 4개 되어야 함
+      -> 1. 일단 사용자가 input에 뭔가를 입력하면 입력한 값을 state로 저장
+         2. 버튼을 누르면 그 state를 [글제목이라는 state] 어레이의 뒤에 하나 추가
+            => 리액트에선 state를 변경하면 그것과 관련된 HTML도 재렌더링 됨
+
+         => 1. 사용자가 input에 뭔가를 입력하면 입력한 값을 state에 저장하려면
+            ex)
+            let [입력값, 입력값변경] = useState('');
+            
+            return(
+                <div>
+                  ~~~HTML잔뜩~~~
+                  <div>
+                    <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
+                    <button>저장</button>
+                  </div>
+                </div>
+            )
+            
+         => 2. 버튼을 누르면 입력값 state를 [글제목] state에 추가할 것
+            ex)
+            let [입력값, 입력값변경] = useState('');
+            
+            return(
+                <div>
+                  ~~~HTML잔뜩~~~
+                  <div>
+                    <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
+                    <button onClick = { () => {
+                        let arrayCopy = [...글제목];
+                        arrayCopy.unshift(입력값);
+                        글제목변경(arrayCopy)
+                    } }>저장</button>
+                  </div>
+                </div>
+            )
+            -> 글제목이라는 state를 수정해서 글제목변경() 안에다가 집어 넣어야 함
+               unshift() : array의 맨 앞 자료를 하나 추가
+               글제목이라는 state는 직접 수정하면 안 되기 때문에
+               1. 글제목을 복사해서 arrayCopy라는 카피본을 하나 만들고
+               2. 그걸 수정하고
+               3. 그걸 새로운 글제목 state가 되도록 입력
+
+</details>
