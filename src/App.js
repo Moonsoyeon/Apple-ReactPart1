@@ -1,7 +1,6 @@
  /* eslint-disable */
 
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -14,7 +13,7 @@ function App() {
   let [modal, modal변경] = useState(false); //모달을 켜고 닫는 스위치
 
   let [누른제목, 누른제목변경] = useState(0);
-  let [ㅇㅇ, ㅇㅇ변경] = useState(0);
+  // let [ㅇㅇ, ㅇㅇ변경] = useState(0);
   let [입력값, 입력값변경] = useState(''); //초기값 = 빈 문자열 
 
   function 반복된UI() {
@@ -32,7 +31,7 @@ function App() {
   // });
 
 
-  let posts = '강남 고기 맛집';
+  // let posts = '강남 고기 맛집';
 
   function 제목바꾸기(){
     var newArray = [...글제목];
