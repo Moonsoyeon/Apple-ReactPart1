@@ -72,7 +72,7 @@ Array, Object 가능 let [a, b] = useState(['ㅇㅇ', 'ㄴㄴ']);
 
 ### 버튼에 기능 개발을 해보자 & 리액트 state 변경하는 법
 
-    - 리액트에서 특정 HTML 요소를 클릭했을 때 자바스크립트를 실행하고 싶으면
+리액트에서 특정 HTML 요소를 클릭했을 때 자바스크립트를 실행하고 싶으면
 ```
 <div onClick = { 실행할 함수 }>
 Click이 대문자, {} 중괄호 사용, 그냥 코드가 아닌 함수를 적어야 함
@@ -124,8 +124,9 @@ return () 안에 HTML을 넣을 때 태그 2개를 평행하게 넣을 수 없�
   <div></div> 
 </div>
 ```
-Component : 리액트에서 제공하는 긴 HTML을 한 단어로 깔끔하게 치환해서 넣을 수 있는 문법
+Component
 ```
+리액트에서 제공하는 긴 HTML을 한 단어로 깔끔하게 치환해서 넣을 수 있는 문법
 함수 만들 듯, 변수 만들 듯 한 단어로 치환해서 원하는 곳에 꽂아넣을 수 있음
 ```  
 방법
@@ -173,8 +174,7 @@ Component 위치는 보통 funcion App(){} 와 나란히 만듦
 Component 단점
 ```
 HTML을 깔끔하게 쓰려고 함수 자체를 많이 만드는 것 자체로 관리가 힘듦
-<Modal>이라는 컴포넌트가 App(){} 안에 있는 state를 사용하고 싶을 때,
-         그냥 바로 쓸 수 없음
+<Modal>이라는 컴포넌트가 App(){} 안에 있는 state를 사용하고 싶을 때, 그냥 바로 쓸 수 없음
   => props라는 문법을 이용해 state를 <Modal>까지 전해줘야 사용 가능
 ```
 
@@ -330,7 +330,7 @@ ex) 글제목이라는 부모 컴포넌트의 state를 자식 컴포넌트에 �
   => props 전송할 때 꼭 {} 중괄호로 전송해야 하는 건 아님
     <Modal 글제목 = {변수명}> 변수명을 넣고 싶으면 중괄호
     <Modal 글제목 = "강남우동맛집"> 일반 텍스트를 전송하고 싶으면 따옴표
-``
+```
 
 </details>
 
@@ -412,34 +412,39 @@ i =  반복문이 돌면서 0, 1, 2, 3 ~~ 이렇게 하나씩 증가하는 정�
 
 ### input 다루기 1 : 사용자가 입력한 글을 변수에 저장하는 법
 
-    - 사용자가 input에 입력한 데이터는 중요한 데이터이기 때문에 state에 저장해서 쓰는 게 일반적
-      ex) let[입력값, 입력값변경] = useState('');
+사용자가 input에 입력한 데이터는 중요한 데이터이기 때문에 state에 저장해서 쓰는 게 일반적
+```
+ex) let[입력값, 입력값변경] = useState('');
+```
+사용자가 input에 입력한 값 알아내는 법
+```
+ex)
+let[입력값, 입력값변경] = useState('');
 
-    - 사용자가 input에 입력한 값 알아내는 법
-      ex)
-      let[입력값, 입력값변경] = useState('');
+return(
+    <div>
+      ~~~HTML잔뜩~~~
+      <input onChange = { (e) => { console.log(e.target.value) } }/>
+    </div>
+)
 
-      return(
-          <div>
-            ~~~HTML잔뜩~~~
-            <input onChange = { (e) => { console.log(e.target.value) } }/>
-          </div>
-      )
-      -> input에 onChange 이벤트핸들러를 달고 자바스크립트 문법을 쓰면 됨
-         onChange : input에 무언가를 입력할 때마다 특정 함수를 동작시킴
-         e.target : '지금 이벤트가 동작하는 HTML 요소', 자바스크립트 문법 (input 태그 등)
-         .value : 그 HTML(input 등)에 유저가 입력한 값
+input에 onChange 이벤트핸들러를 달고 자바스크립트 문법을 쓰면 됨
+onChange : input에 무언가를 입력할 때마다 특정 함수를 동작시킴
+e.target : '지금 이벤트가 동작하는 HTML 요소', 자바스크립트 문법 (input 태그 등)
+.value : 그 HTML(input 등)에 유저가 입력한 값
+```
+input에 뭔가를 입력할 때마다 input에 입력된 값을 state에 저장하는 법
+```
+ex)
+let[입력값, 입력값변경] = useState('');
 
-    - input에 뭔가를 입력할 때마다 input에 입력된 값을 state에 저장하는 법
-      ex)
-      let[입력값, 입력값변경] = useState('');
-
-      return(
-          <div>
-            ~~~HTML잔뜩~~~
-            <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
-          </div>
-      )
+return(
+    <div>
+      ~~~HTML잔뜩~~~
+      <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
+    </div>
+)
+```
 
 </details>
 
@@ -448,62 +453,64 @@ i =  반복문이 돌면서 0, 1, 2, 3 ~~ 이렇게 하나씩 증가하는 정�
 
 ### input 다루기 2 : 블로그 글발행 기능 만들기
 
-    1. 글을 적을 수 잇는 UI가 하나 필요하고
-    2. 버튼을 눌렀을 때 글이 하나 추가되게 만들어야 함
+#### 1. 글을 적을 수 잇는 UI가 하나 필요하고
+#### 2. 버튼을 눌렀을 때 글이 하나 추가되게 만들어야 함
 
-    - 1. 글적을 수 있는 UI부터 디자인해보자
+1. 글적을 수 있는 UI부터 디자인해보자
+```
+ex)
+<div>
+  HTML 잔뜩 있는 곳
+  <div className="publish">
+    <input />
+    <button>저장</button>
+  </div>
+</div>
+```      
+2. 글 적고 저장 버튼을 누르면 게시물이 4개 되어야 함
+```
+1. 일단 사용자가 input에 뭔가를 입력하면 입력한 값을 state로 저장
+2. 버튼을 누르면 그 state를 [글제목이라는 state] 어레이의 뒤에 하나 추가
+   => 리액트에선 state를 변경하면 그것과 관련된 HTML도 재렌더링 됨
+
+   => 1. 사용자가 input에 뭔가를 입력하면 입력한 값을 state에 저장하려면
       ex)
-      <div>
-        HTML 잔뜩 있는 곳
-        <div className="publish">
-          <input />
-          <button>저장</button>
-        </div>
-      </div>
-      
-    - 2. 글 적고 저장 버튼을 누르면 게시물이 4개 되어야 함
-      -> 1. 일단 사용자가 input에 뭔가를 입력하면 입력한 값을 state로 저장
-         2. 버튼을 누르면 그 state를 [글제목이라는 state] 어레이의 뒤에 하나 추가
-            => 리액트에선 state를 변경하면 그것과 관련된 HTML도 재렌더링 됨
-
-         => 1. 사용자가 input에 뭔가를 입력하면 입력한 값을 state에 저장하려면
-            ex)
-            let [입력값, 입력값변경] = useState('');
+      let [입력값, 입력값변경] = useState('');
             
-            return(
-                <div>
-                  ~~~HTML잔뜩~~~
-                  <div>
-                    <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
-                    <button>저장</button>
-                  </div>
-                </div>
-            )
+      return(
+          <div>
+            ~~~HTML잔뜩~~~
+            <div>
+              <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
+              <button>저장</button>
+            </div>
+          </div>
+      )
             
-         => 2. 버튼을 누르면 입력값 state를 [글제목] state에 추가할 것
-            ex)
-            let [입력값, 입력값변경] = useState('');
+    => 2. 버튼을 누르면 입력값 state를 [글제목] state에 추가할 것
+       ex)
+       let [입력값, 입력값변경] = useState('');
             
-            return(
-                <div>
-                  ~~~HTML잔뜩~~~
-                  <div>
-                    <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
-                    <button onClick = { () => {
-                        let arrayCopy = [...글제목];
-                        arrayCopy.unshift(입력값);
-                        글제목변경(arrayCopy)
-                    } }>저장</button>
-                  </div>
-                </div>
-            )
-            -> 글제목이라는 state를 수정해서 글제목변경() 안에다가 집어 넣어야 함
-               unshift() : array의 맨 앞 자료를 하나 추가
-               글제목이라는 state는 직접 수정하면 안 되기 때문에
-               1. 글제목을 복사해서 arrayCopy라는 카피본을 하나 만들고
-               2. 그걸 수정하고
-               3. 그걸 새로운 글제목 state가 되도록 입력
-
+       return(
+           <div>
+             ~~~HTML잔뜩~~~
+             <div>
+               <input onChange = { (e) => { 입력값변경(e.target.value) } }/>
+               <button onClick = { () => {
+                   let arrayCopy = [...글제목];
+                   arrayCopy.unshift(입력값);
+                   글제목변경(arrayCopy)
+               } }>저장</button>
+             </div>
+           </div>
+       )
+      -> 글제목이라는 state를 수정해서 글제목변경() 안에다가 집어 넣어야 함
+         unshift() : array의 맨 앞 자료를 하나 추가
+         글제목이라는 state는 직접 수정하면 안 되기 때문에
+         1. 글제목을 복사해서 arrayCopy라는 카피본을 하나 만들고
+         2. 그걸 수정하고
+         3. 그걸 새로운 글제목 state가 되도록 입력
+```
 </details>
 
 -----
